@@ -61,7 +61,7 @@ Routes:
 
  **At least one error handler for a 404 error and a corresponding template.**
 
- Include at least 4 template .html files in addition to the error handling template files.**
+ **Include at least 4 template .html files in addition to the error handling template files.**
 
  **At least one Jinja template for loop and at least two Jinja template conditionals should occur amongst the templates.**
  **At least one request to a REST API that is based on data submitted in a WTForm OR data accessed in another way online (e.g. scraping with BeautifulSoup that does accord with other involved sites' Terms of Service, etc).**
@@ -85,7 +85,8 @@ Routes:
 
  **Have at least 5 view functions that are not included with the code we have provided. (But you may have more!)**
  
- Additional Requirements
+ _Additional Requirements_
+ 
  (100 points) Include a use of an AJAX request in your application that accesses and displays useful (for use of your application) data.
  
  **(100 points) Create, run, and commit at least one migration. (We'll see this from the files generated and can check the history)**
