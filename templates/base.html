@@ -1,0 +1,23 @@
+{% block content %}
+
+
+{% endblock %}
+
+<p>------------</p>
+<h3>Navigation Menu </h3>
+<ul>
+    <li><a href="{{ url_for('index')}}"> Home.</a></li>
+    <li><a href="{{ url_for('review')}}"> Submit a review.</a></li>
+    <li><a href="{{ url_for('places_search')}}">Search for a restaurant.</a></li>
+    <li><a href="{{ url_for('add')}}"> Add Restaurants You've Been To.</a></li>
+    <li><a href="{{ url_for('all_reviews')}}"> See all Reviews.</a></li>
+    <li><a href="{{ url_for('all_places')}}">Your List of Restaurants.</a></li>
+    <li><a href="{{ url_for('all_searches')}}">Search History.</a></li>
+<br>
+<br>
+<br>
+
+    <li><a href="{{ url_for('logout')}}">Logout.</a></li>
+    <li><a href="{{ url_for('login')}}">Login.</a></li>
+    <li><a href="{{ url_for('register')}}"> Register</a></li>
+</ul>

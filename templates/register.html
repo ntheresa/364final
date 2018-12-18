@@ -1,0 +1,22 @@
+<h1>Register Your Account</h1>
+
+{% extends 'base.html' %}
+
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block content %}
+<form method="POST">
+	{{ form.hidden_tag() }} <br>
+	{{ form.email.label }} {{ form.email() }} <br> <br>
+	{{ form.username.label }} {{ form.username() }} <br> <br>
+    {{ form.password.label }} {{ form.password() }} <br> <br>
+    {{ form.password2.label }} {{ form.password2() }} <br <br> 
+	{{ form.submit.label }}{{ form.submit() }}
+
+</form>
+
+
+
+{% endblock %}

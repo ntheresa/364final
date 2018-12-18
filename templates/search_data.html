@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+<h2> Search for Restaurants in Ann Arbor! </h2>
+<p> Type in a key word to search for a restaurant (ex. Ice Cream, Pizza, Burgers)</p>
+<form method = "POST" action="http://localhost:5000/places_search">
+	{{ form.hidden_tag() }}
+	{{ form.place.label }} {{ form.place() }}
+  <br>
+	{{ form.submit() }}
+</form>
+</div>
+
+{% if data %}
+    <h2>{{ data['results'][0]['name'] }}</h2>
+    <p>Rating : {{ data['results'][0]['rating'] }}</p>
+    <p>Address : {{ data['results'][0]['vicinity'] }}</p>
+    <br>
+    <h2>{{ data['results'][1]['name'] }}</h2>
+    <p>Rating : {{ data['results'][1]['rating'] }}</p>
+    <p>Location : {{ data['results'][1]['vicinity'] }}</p>
+    <br>
+    <h2>{{ data['results'][2]['name'] }}</h2>
+    <p>Rating : {{ data['results'][2]['rating'] }}</p>
+    <p>Location : {{ data['results'][2]['vicinity'] }}</p>
+{% endif %}
+
+
+{% endblock %}

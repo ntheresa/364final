@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Places You Have Searched:</h1>
+
+<br>
+
+{% for p in searches %}
+    <p>{{ p.business }}</p>
+{% endfor %}
+
+{% endblock %}

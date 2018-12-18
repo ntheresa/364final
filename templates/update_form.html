@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block nav %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+<h2> Update Form </h2>
+<ul>
+    <li>
+        Place: {{ places.name }}
+        <form method="GET" action="/update/{{ places.place_name }}">
+  			{{ form.hidden_tag() }}
+  			{{ form.submit() }}
+  		</form>
+    </li>
+</ul>
+
+<div>
+{% for message in get_flashed_messages() %}
+<strong>*** {{ message }} ***</strong>
+{% endfor %}
+</div>
+
+{% endblock %}

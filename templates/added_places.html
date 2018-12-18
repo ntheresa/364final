@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Places You've Added:</h1>
+<p> Click on a restaurant name to update it! </p<>
+<br>
+
+
+{% if not places %}
+There are no places to show.
+
+{% else %}
+
+<ul>
+{% for l in places %}
+    <li>
+        <a href="{{ url_for('new_list',option=l.place_name)}}">{{ l.place_name }}</a>
+        <form method="GET" action="/delete/{{ l.place_name }}">
+         {{ form.hidden_tag() }}
+         {{ form.submit() }}
+        </form>
+    </li>
+{% endfor %}
+</ul>
+{% endif %}
+
+<div>
+{% for message in get_flashed_messages() %}
+<strong>*** {{ message }} ***</strong>
+{% endfor %}
+</div>
+
+{% endblock %}

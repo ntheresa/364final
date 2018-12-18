@@ -1,0 +1,33 @@
+{% if current_user.is_authenticated %}
+    <a href="{{ url_for('logout') }}">Sign Out {{current_user.username}}</a>
+{% else %}
+    <a href="{{ url_for('login') }}">Sign In</a>
+{% endif %}
+<br>
+<br>
+<img src="https://media.giphy.com/media/7JzHsh3UTip20/giphy.gif" alt="Restaurant">
+<h2> Hi {{current_user.username}}! </h2>
+<h3> Click on links below to get started. </h3>
+{% block navigation %}
+<ul>
+    <li><a href="{{ url_for('index')}}"> Home.</a></li>
+    <li><a href="{{ url_for('review')}}"> Submit a review.</a></li>
+    <li><a href="{{ url_for('places_search')}}">Search for a restaurant in Ann Arbor.</a></li>
+    <li><a href="{{ url_for('add')}}"> Add Restaurants You've Been To.</a></li>
+    <li><a href="{{ url_for('all_reviews')}}"> See all Reviews.</a></li>
+    <li><a href="{{ url_for('all_places')}}">Your List of Restaurants.</a></li>
+</ul>
+<p>--------</p><br>
+{% endblock %}
+
+
+{% block main_content %}
+
+
+<div>
+{% for message in get_flashed_messages() %}
+{{ message }}
+{% endfor %}
+</div>
+
+{% endblock %}

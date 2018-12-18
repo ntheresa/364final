@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h2> Review a Restaurant </h2>
+
+<form method="POST"  action="http://localhost:5000/enter_review">
+    {{ form.hidden_tag() }}
+    {{ form.placename.label() }}{{ form.placename() }}<br> <br>
+    {{ form.rating.label() }}{{ form.rating() }}<br> <br>
+    {{ form.price.label() }}{{ form.price() }}<br> <br>
+    {{ form.text_entry.label() }}{{ form.text_entry() }}<br> <br>
+    {{ form.submit() }}
+
+</form>
+{% for message in get_flashed_messages() %}
+    <strong>{{ message }}</strong>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h2> Updating {{ name }} </h2>
+<form method="POST" action="/update/{{ name }}">
+	{{ form.hidden_tag() }}
+	{{form.new_place.label }} {{ form.new_place() }} <br>
+	{{ form.submit() }}
+</form>
+
+{% for message in get_flashed_messages() %}
+    <strong>{{ message }}</strong>
+{% endfor %}
+{% endblock %}
